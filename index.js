@@ -1,13 +1,25 @@
 //fake database
 let database = [
-    { img: "https://picsum.photos/250/310" },
-    { img: "https://picsum.photos/200/300" },
-    { img: "https://picsum.photos/210/350" }
+    { img: "./worm1.jpg" },
+    { img: "./worm2.jpg" },
+    { img: "./worm3.jpg" },
+    { img: "https://picsum.photos/250/310" }
 ]
 
 window.onload = function () {
     const coolest = document.getElementById("firstimg");
-    let image = database[0].img
-    coolest.setAttribute("src", image)
+
+    let i = 0
+    coolest.setAttribute("src", database[i].img)
+
+    coolest.onclick = function () {
+        i++
+        if (i < database.length) {
+            coolest.setAttribute("src", database[i].img)
+        } else {
+            i = 0
+            coolest.setAttribute("src", database[0].img)
+        }
+    }
 
 };
