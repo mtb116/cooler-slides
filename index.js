@@ -13,7 +13,7 @@ let database = [
         sound: "./LevelUp.ogg"
     },
     {
-        img: "https://picsum.photos/250/310",
+        img: "./worm4.jpg",
         sound: "./greetings.ogg"
     }
 ]
