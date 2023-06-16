@@ -2,7 +2,7 @@
 let database = [
     {
         img: "./worm1.jpg",
-        sound: "./LevelUp.ogg"
+        sound: ""
     },
     {
         img: "./worm2.jpg",
@@ -22,39 +22,69 @@ let database = [
 //code that gets info from the database
 
 
-window.onload = function () {
+function changeSlide(i) {
     const coolest = document.getElementById("firstimg");
+    coolest.setAttribute("src", database[i].img);
+}
+
+function playSound(i) {
     const coolsound = document.getElementById("firstsound");
-    const myAudio = document.getElementById("myAudio")
+    coolsound.setAttribute("src", database[i].sound);
+
+    const myAudio = document.getElementById("myAudio");
+    myAudio.load();
+    myAudio.play();
+}
+
+function disablePrevButton(i) {
+    if (i === 0) {
+        prevSlide.setAttribute("disabled", "");
+    } else {
+        console.log("hey")
+        prevSlide.removeAttribute("disabled");
+    }
+}
+
+function changeNextButtonLabel(i, nextSlide) {
+    if (i === (database.length - 1)) {
+        nextSlide.innerHTML = "Start Slides OVer";
+    } else {
+        nextSlide.innerHTML = "Next Slide";
+    }
+}
+
+
+window.onload = function () {
+    //set first slide
+    let i = 0;
+    const coolest = document.getElementById("firstimg");
+    coolest.setAttribute("src", database[i].img);
+
+    disablePrevButton(i);
 
     const prevSlide = document.getElementById("prevSlide");
-
-
-    let i = 0
-    coolest.setAttribute("src", database[i].img)
-
-    coolest.onclick = function () {
-        console.log(i)
-        myAudio.load()
-        myAudio.play();
+    const nextSlide = document.getElementById("nextSlide");
+    
+    nextSlide.onclick = function () {
         i++
-        if (i < database.length) {
-            coolest.setAttribute("src", database[i].img)
-            coolsound.setAttribute("src", database[i].sound)
-        } else {
+        if(i === database.length) {
             i = 0
-            coolest.setAttribute("src", database[0].img)
-            coolsound.setAttribute("src", "")
         }
+        changeSlide(i);
+        playSound(i);
+        disablePrevButton(i);
+        changeNextButtonLabel(i, nextSlide);
     }
 
     prevSlide.onclick = function () {
-        console.log("i=" + i)
-        let h = i - 1
-        coolest.setAttribute("src", database[h].img)
-        coolsound.setAttribute("src", database[h].sound)
-        myAudio.load()
-        myAudio.play();
-        console.log("h=" + h)
+        i--
+        if (i < 0) {
+            i = 0
+        }
+        changeSlide(i);
+        playSound(i);
+        disablePrevButton(i);
+        changeNextButtonLabel(i, nextSlide);
     }
+
 };
