@@ -1,20 +1,20 @@
 //fake database
 let database = [
     {
-        img: "./worm1.jpg",
+        img: "./database/worm1.jpg",
         sound: ""
     },
     {
-        img: "./worm2.jpg",
-        sound: "./greetings.ogg"
+        img: "./database/worm2.jpg",
+        sound: "./database/greetings.ogg"
     },
     {
-        img: "./worm3.jpg",
-        sound: "./LevelUp.ogg"
+        img: "./database/worm3.jpg",
+        sound: "./database/LevelUp.ogg"
     },
     {
-        img: "./worm4.jpg",
-        sound: "./greetings.ogg"
+        img: "./database/worm4.jpg",
+        sound: "./database/greetings.ogg"
     }
 ]
 

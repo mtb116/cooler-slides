@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <script src="./index.js"></script>
     <title>cooler-slides</title>
 </head>
 <body>
-    <img id="firstimg" src="" alt="">
-    <audio id="myAudio" controls>
-        <source id="firstsound" src="" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
-    <button id="prevSlide" type="button">Previous Slide</button>
-    <button id="nextSlide" type="button">NextSlide</button>
+    <div id="slides">
+        <div>
+            <img id="firstimg" src="" alt="">
+        </div>
+        <div>
+            <audio id="myAudio" controls>
+                <source id="firstsound" src="" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+            <div>
+                <button id="prevSlide" type="button">Previous Slide</button>
+                <button id="nextSlide" type="button">NextSlide</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
