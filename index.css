@@ -1,0 +1,12 @@
+#slides {
+    border: 3px solid green;
+    text-align: center;
+    padding: 10px;
+}
+
+
+#firstimg {
+    width: 600px;
+    height: 300px;
+    object-fit: contain;
+}
